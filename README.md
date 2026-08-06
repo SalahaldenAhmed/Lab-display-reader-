@@ -74,10 +74,10 @@ Because roi_tool.py calibrates one camera stream at a time, follow this workflow
 1. Calibrate Camera 1 (cam_front)
 1\ Set camera.device: ? in config.yaml.
 2\ Run the ROI tool over SSH:
-
+```bash
 source .venv/bin/activate
 python src/roi_tool.py
-
+```
 3\ Click + drag to draw a box around the first screen \rightarrow Press s to save \rightarrow Press q to exit.
 
 4\ Rename the output file:
@@ -87,9 +87,9 @@ mv rois.json rois_front.json
 2. Calibrate Camera 2 (cam_side)
 1\ Change camera.device: ? in config.yaml.
 2\ Run the ROI tool again:
-
+```bash
 python src/roi_tool.py
-
+```
 
 3. Merge ROIs into rois.json
 Combine both calibration files into your primary rois.json file:
@@ -97,18 +97,21 @@ Combine both calibration files into your primary rois.json file:
 
 Running the Reader
 Activate your virtual environment and launch main.py:
-
+```bash
 source .venv/bin/activate
-
+```
 # 1. Launch with GUI Dashboard (Requires SSH X11 forwarding: ssh -X user@host)
+```bash
 python src/main.py
-
+```
 # 2. Run in Headless Mode (Console output only)
+```bash
 python src/main.py --headless
-
+```
 # 3. Save readings directly to CSV
+```bash
 python src/main.py --log readings.csv
-
+```
 
 Dashboard GUI Hotkeys
 q : Quit application cleanly.
