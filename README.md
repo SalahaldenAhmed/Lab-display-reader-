@@ -26,7 +26,7 @@ git clone [https://github.com/SalahaldenAhmed/Lab-display-reader-.git](https://g
 cd Lab-display-reader-
 chmod +x setup.sh
 ./setup.sh
----
+```
 setup.sh installs required system packages, builds the Python virtual environment (.venv), and installs all core dependencies.
 2. Configure Your Cameras (config.yaml)
 Edit config.yaml to set up your individual cameras, model choices, and data fields:
@@ -38,7 +38,7 @@ camera:
   device: 2                      # Default USB index (/dev/video2)
   width: 1280
   height: 720
-```bash
+
 # Multi-camera configuration (Used during runtime in main.py)
 cameras:
   cam_front:
@@ -68,7 +68,7 @@ fields:
     label: "Display B"
     unit: ""
 
-
+```
 🎯 Step-by-Step ROI Calibration
 Because roi_tool.py calibrates one camera stream at a time, follow this workflow to configure ROIs for multiple cameras:
 1. Calibrate Camera 1 (cam_front)
