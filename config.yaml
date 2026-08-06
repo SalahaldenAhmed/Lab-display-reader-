@@ -1,0 +1,66 @@
+# ==============================================================================
+# DEFAULT CAMERA (Used by src/roi_tool.py for drawing ROIs)
+# Change 'device' to 2 or 4 depending on which camera you are calibrating.
+# ==============================================================================
+camera:
+  mode: "usb"
+  device: 2                   # Default USB camera index (or /dev/video2)
+  width: 1280
+  height: 720
+  fps: 30
+
+# ==============================================================================
+# MULTI-CAMERA CONFIGURATION (Used by src/main.py during runtime)
+# ==============================================================================
+cameras:
+  cam_front:
+    mode: "usb"
+    device: 2                    # /dev/video2
+    width: 1280
+    height: 720
+    fps: 30
+  cam_side:
+    mode: "usb"
+    device: 4                    # /dev/video4
+    width: 1280
+    height: 720
+    fps: 30
+
+# ==============================================================================
+# OCR ENGINE CONFIGURATION
+# ==============================================================================
+ocr:
+  model_path: "models/en_PP-OCRv5_mobile_rec.onnx"
+  dict_path: "models/ppocrv5_dict.txt"
+
+# ==============================================================================
+# STABILIZER CONFIGURATION
+# Higher alpha (e.g., 0.5) reacts faster to motion; lower (e.g., 0.2) smooths more.
+# ==============================================================================
+stabilizer:
+  alpha: 0.35
+
+# ==============================================================================
+# DISPLAY & VOTER SETTINGS
+# ==============================================================================
+display:
+  vote_window: 15               # Number of frames for majority voting filter
+  history: 120                  # History length for sparklines/plots
+  min_conf: 0.40                # Minimum OCR confidence threshold
+  panel_width: 430
+  scale: 1.0                    # GUI video scale factor (lower if SSH is laggy)
+
+# ==============================================================================
+# FIELD METADATA & CAMERA ASSIGNMENTS
+# ==============================================================================
+fields:
+  temp_a:
+    camera: "temp_a"
+    label: "Temperature A"
+    unit: "°C"
+    decimals: 1
+  pressure_b:
+    camera: "temp_b"
+    label: "Temperature B"      # Or "Pressure B"
+    unit: "°C"
+    decimals: 1

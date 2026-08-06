@@ -1,0 +1,12 @@
+[
+  {
+    "name": "temp_a",
+    "camera": "cam_front",
+    "box": [480, 260, 680, 370]
+  },
+  {
+    "name": "temp_b",
+    "camera": "cam_side",
+    "box": [300, 180, 500, 350]
+  }
+]
