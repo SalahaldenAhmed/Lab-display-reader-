@@ -30,8 +30,8 @@ chmod +x setup.sh
 setup.sh installs required system packages, builds the Python virtual environment (.venv), and installs all core dependencies.
 2. Configure Your Cameras (config.yaml)
 Edit config.yaml to set up your individual cameras, model choices, and data fields:
----
-# Default single camera (Used by roi_tool.py)
+
+ Default single camera (Used by roi_tool.py)
 ```bash
 camera:
   mode: "usb"
@@ -39,7 +39,7 @@ camera:
   width: 1280
   height: 720
 
-# Multi-camera configuration (Used during runtime in main.py)
+ Multi-camera configuration (Used during runtime in main.py)
 cameras:
   cam_front:
     mode: "usb"
@@ -52,12 +52,12 @@ cameras:
     width: 1280
     height: 720
 
-# OCR engine configuration
+ OCR engine configuration
 ocr:
   model_path: "models/en_PP-OCRv5_mobile_rec.onnx"
   dict_path: "models/ppocrv5_dict.txt"
 
-# Field metadata & UI mapping
+ Field metadata & UI mapping
 fields:
   temp_a:
     camera: "cam_front"
@@ -100,15 +100,15 @@ Activate your virtual environment and launch main.py:
 ```bash
 source .venv/bin/activate
 ```
-# 1. Launch with GUI Dashboard (Requires SSH X11 forwarding: ssh -X user@host)
+ 1. Launch with GUI Dashboard (Requires SSH X11 forwarding: ssh -X user@host)
 ```bash
 python src/main.py
 ```
-# 2. Run in Headless Mode (Console output only)
+ 2. Run in Headless Mode (Console output only)
 ```bash
 python src/main.py --headless
 ```
-# 3. Save readings directly to CSV
+ 3. Save readings directly to CSV
 ```bash
 python src/main.py --log readings.csv
 ```
